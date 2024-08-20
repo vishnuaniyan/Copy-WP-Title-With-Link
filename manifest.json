@@ -1,0 +1,23 @@
+// File 1: manifest.json
+{
+    "manifest_version": 3,
+    "name": "WordPress Title and URL Clipper",
+    "version": "1.0",
+    "description": "Copies the title and URL of a WordPress post to the clipboard",
+    "permissions": [
+      "activeTab"
+    ],
+    "action": {
+      "default_icon": "icon.png",
+      "default_title": "Copy Title and URL"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
